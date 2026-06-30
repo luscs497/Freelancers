@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Estrela from './Estrela';
 
 const time = [
@@ -9,12 +10,14 @@ const time = [
     cargo: 'Fundador & Diretor de Imagem',
     desc: 'Fotógrafo profissional, responsável pela criação de imagens do Coletivo.',
     iniciais: 'EE',
+    foto: '/team/eduardo.jpg',
   },
   {
     nome: 'Mariana Esmeralda',
     cargo: 'Mentora Criativa & Designer',
     desc: 'Designer gráfico, diretora do setor criativo do Coletivo.',
     iniciais: 'ME',
+    foto: '/team/mariana.jpg',
   },
 ];
 
@@ -56,10 +59,14 @@ export default function QuemSomos() {
               className="group relative"
             >
               <div className="aspect-[4/5] bg-gradient-to-br from-verde to-verde-escuro border border-amarelo/20 relative overflow-hidden flex items-center justify-center">
-                {/* Iniciais grandes como placeholder enquanto não há foto */}
-                <span className="font-display text-[180px] text-amarelo/30 font-medium">
-                  {p.iniciais}
-                </span>
+                {/* Foto do membro */}
+                <Image
+                  src={p.foto}
+                  alt={p.nome}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
 
                 {/* Padrão decorativo */}
                 <div className="absolute inset-0 opacity-20">
@@ -73,7 +80,7 @@ export default function QuemSomos() {
                   </svg>
                 </div>
 
-                <div className="absolute bottom-6 left-6 right-6">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-verde-escuro/95 via-verde-escuro/60 to-transparent pt-16 pb-6 px-6">
                   <h3 className="font-display text-3xl md:text-4xl text-creme font-medium">
                     {p.nome}
                   </h3>

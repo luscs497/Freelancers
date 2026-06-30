@@ -43,7 +43,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/coletivohaja/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="link-underline"
